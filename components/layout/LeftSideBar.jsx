@@ -11,7 +11,7 @@ const LeftSideBar = () => {
   return (
     <div className='h-screen left-0 top-0 sticky overflow-auto px-10 py-6 flex flex-col gap-3 max-md:hidden custom-scrolbar'>
       <Link href="/">
-      <Image src="/assets/logo2.png" alt='logo' width={200} height={50}/>
+      <Image src="/assets/logo2.png" alt='logo' width={200} height={5}/>
       </Link>
       <div className='flex flex-col gap-2'>
         <div className='flex flex-col gap-2 items-center text-light-1'>
