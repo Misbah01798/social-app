@@ -1,6 +1,6 @@
 "use client"
 import Topbar from './Topbar'
-import { usePathname } from 'next/navigation';
+import { usePathname } from 'next/navigation'; 
 import { pageTitles } from '@constants'
 
 const MainContainer = ({ children }) => {
