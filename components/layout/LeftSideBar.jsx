@@ -1,12 +1,26 @@
 "use client"
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Menu from './Menu'
-import { SignOutButton, SignedIn, UserButton } from '@clerk/nextjs'
+import { SignOutButton, SignedIn, UserButton, useUser } from '@clerk/nextjs'
 import { Logout } from '@mui/icons-material'
+import Loader from './Loader'
 
 const LeftSideBar = () => {
+    const {user, isLoaded} =useUser()
+    const [loading, setLoading] =useState(true);
+    const [userData, setUserData] =useState({});
+    const getUser =async ()=>{
+        const response = await fetch(`/api/user/${user.id}`)
+        const data = await response.json()
+        setUserData(data)
+        setLoading(false)
+    }
+    useEffect(()=>{
+        getUser()
+    }, [user])
+
     const isLoggedIn =true
   return (
     <div className='h-screen left-0 top-0 sticky overflow-auto px-10 py-6 flex flex-col gap-3 max-md:hidden custom-scrolbar'>

@@ -1,5 +1,5 @@
-import { SignUp } from "@clerk/nextjs";
-import {shadesOfPurple} from "@clerk/themes"
+import SignUp from "@components/register/SignUp";
+
 export default function Page() {
-  return <SignUp appearance={{baseTheme: shadesOfPurple}}/>;
+  return <SignUp/>;
 }
